@@ -1,0 +1,654 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html"/>
+	<!--<script src="http://code.jquery.com/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>-->
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+	<script src="js/easytabs.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="css/layout.css" type="text/css" />
+	<link rel="stylesheet" href="css/istokweb.css" type="text/css" />
+	<link rel="stylesheet" href="css/stylesheet.css" type="text/css" />
+
+	<style type="text/css">
+		body {
+				font-family: 'IstokWebRegular';
+		}
+		H1, H2 {
+			font-family: 'courgetteregular';
+		}
+	</style>
+	<title>QRMAN - Shorturl and Qr Code Generator</title>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			$('#container').easyTabs({defaultContent:1});
+		});
+	</script>
+</head>
+
+<body>
+<div id="container">
+	<div id="header">
+	<div id="logo">
+		<a href="index.html"><img src="images/techlister_logo.png"></a>
+	</div>
+	<h1>
+		QRMAN 1.0
+	</h1>
+	</div>
+	<ul class="tabs">
+		<li><a href="#features">Features</a></li>
+		<li><a href="#install">Installation</a></li>
+		<li><a href="#api">QRMAN API - QR Codes</a></li>
+		<li><a href="#apisr">QRMAN API - Storage and Retrieval</a></li>
+		<li><a href="#credits">Credits</a></li>
+		<li><a href="#require">Requirements</a></li>	
+	</ul>
+	
+	<div id="main_content">
+
+		
+			<div id="features">
+		
+			<h1>QRMAN - QR Code and Shorturl Generator	</h1>
+				<p>
+				   QRMAN written entirely in PHP with Ajax interface using jQuery is a simple QR Code and Shorturl Generator.
+				   Now you can run your own QR Code Generation and Shorturl service from your domain.
+				<p>
+				<br />
+				<h2>QRMAN Features</h2>
+				<br />
+				
+				<ul>											
+					<li>Open Source software - released under GPL License.</li>
+					<li>Generates 10 types of QR Codes.</li>
+					<li>Generates Shorturl for every QR Code.</li>
+					<li>Generates Tracking Code and Non Tracking Code.</li>
+					<li>Create, Edit and Delete QR codes.</li>
+					<li>Url Redirection for Urls and Bookmarks - similar to shorturl services.</li>
+					<li>Excellent statistics: click reports, referrers tracking, visitors geo-location, platform and browsers.</li>
+					<li>Clean Ajax interface.</li>
+					<li>API for QR Code Generation, Store QR Codes and Fetch statistics.</li>
+					<li>API output in JSON, JSONP and XML.</li>
+					<li>Supports Cross Domain Ajax Request.</li>
+					<li>Inbuilt Installer for easy Installation .</li>
+					<li>User Management feature for Admin.</li>
+					<li>Registration, Password reset feature for users.</li>
+				</ul>	
+				<br />
+				<h2>Download</h2>
+					
+					<p>Download QRMAN from techlister.com</p>
+					<br />
+					
+					<p>
+						<div id="qrmandon">
+							<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+								<input type="hidden" name="cmd" value="_donations">
+								<input type="hidden" name="business" value="maria.mathalane@gmail.com">
+								<input type="hidden" name="lc" value="US">
+								<input type="hidden" name="item_name" value="Techlister QRMAN">
+								<input type="hidden" name="no_note" value="0">
+								<input type="hidden" name="currency_code" value="USD">
+								<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+								<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+								<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+							</form>	
+						</div>
+					</p>
+					<p>Your contribution will help in the further development of QRMAN</p>
+								
+			</div>
+			
+			<div id="install">
+			
+				<h1> QRMAN 1.0 Installation</h1>	
+				<ul>		
+					<li>Unzip the QRMAN archive</li>
+					<li>Upload the unzipped files to your domain public_html or www folder</li>
+					<li>Create a new database ( tables are automatically created by the installer )</li>
+					<li>Point your browser to http://yoursite.com/ and follow the on screen instructions.</li>
+				</ul>
+				<br />
+				<h2>Configuration</h2>
+				<br />
+					<p><strong>qr-config.php</strong> - is automatically created by the installer. This file contains the settings required to run QRMAN so you must know few things about the settings within this file. </p>
+				<br />
+				<h3>DB Settings</h3>
+				
+						<code>define('QRGEN_DB_HOST', 'localhost');</code>
+						The database host, example: 'localhost' 
+					<br />							
+						<code>define('QRGEN_DB_USER', 'db user');</code>
+						your MySQL username, example: 'jack'
+					<br />							
+						<code>define('QRGEN_DB_PASS', 'db pass');</code>
+						your MySQL password, example: 'Secret123'
+					<br />							
+						<code>define('QRGEN_DB_NAME', 'qrman'); </code>
+						The database name, example: 'qrman'
+					<br />							
+						<code>define('QRGEN_DB_PREFIX', 'qr_');</code>
+						The name prefix for all the tables QRMAN will need, example: 'qr_'
+					<br /><br />
+					<h3>Email Setting</h3>
+		
+					<code>define('EMAIL_WELCOME', true); </code>
+					set this false if you do not want your users to receive a welcome Email after registration.
+					<br />
+									
+			</div>
+			
+			<div id="api">
+			
+				<h1>QRMAN API - Generate QR Codes</h1>
+				
+				<h2>Features</h2>
+				<ul>
+					<li>Generate QR Codes or Get the stats of existing QR Code</li>
+					<li>Save QR Codes based on the type.</li>
+					<li>Output format: JSON, XML, JSONP - for stats and save the qrcodes.</li>
+					<li>Output format: image/png - for generating QR Codes</li>
+					<li>Authentification through API key which is automatically generated when the user is created</li>
+				</ul>
+				<br />
+				<h2>Usage</h2>
+					<p>You need to send parameters to http://yoursite.com/qr-api.php either via GET or POST always remember to URL encode the parameters if you are sending via GET. </p>
+					<br />
+					<h3>Parameters for generating QR Code</h3>
+					
+					<table>
+						<tr>
+							<th>Parameter</th><th>Value</th><th>Description</th>
+						</tr>
+						<tr>
+							<td>action</td><td>qr</td><td>Specifies that your are requesting a QR Code <pre>e.g: http://yoursite.com/qr-api.php?action=qr </pre></td>
+						</tr>
+						<tr>
+							<td>ec</td><td>L, M, Q, H </td><td>Error Correction value, it can be any one of these vales. <pre>e.g: http://yoursite.com/qr-api.php?action=qr&ec=L </pre> More on Error Correction values below this table</td>					
+						</tr>
+						<tr>
+							<td>size</td><td>width and height</td><td>Width and height of the image<pre>e.g: http://yoursite.com/qr-api.php?action=qr&size=widthxheight </pre> If size is not provided the size is determined automatically.</td>					
+						</tr>
+						<tr>
+							<td>data</td><td>Actual data to be encoded</td><td>This data will be coverted to QR Code, So you need to encode it for various types like urls, bookmarks, vcard etc<pre>e.g: http://yoursite.com/qr-api.php?action=qr&data=yourdata </pre></td>					
+						</tr>
+					</table>
+					<br />
+					<h3>Error Correction Values</h3>
+					<p>These values specify the error correction level of the QR Code, so the generated QR Code can recover certain amount of data lost due to the damage of QR Codes.</p>
+					<ul>
+						<li>L - Recovery of 7% Data loss</li>
+						<li>M - Recovery of 15% Data loss</li>
+						<li>Q - Recovery of 25% Data loss</li>
+						<li>H - Recovery of 30% Data loss</li>
+					</ul>
+					<br />
+					<h3>Sample PHP code</h3>
+<code>
+$width = $height = 200;
+$url = urlencode("http://techlister.com"); 
+$error = 'L';
+echo "&lt;img src=&quot;http://yoursite.com/qr-api.php?size={$width}x{$height}&amp;action=qr&amp;ec=$error&amp;data=$url&quot; /&gt;";							
+</code>
+				<br />
+				
+				<h3>Sample Output</h3>
+				<img src="images/qrcode.png" width="200px" height="200px">
+				<br /><br />	
+				<h2>Cross Domain Ajax request</h3>
+				<p>You can also create QR Codes by sending data through Ajax request. But while sending through ajax you must set a parameter to identify ajax request.
+				Set an hidden field with value "ajax" and send the form data via Ajax.</p>
+				<h3>Example HTML</h3>
+<code>
+&lt;form action=&quot;http://formican.com/qr-api.php&quot; id=&quot;qrform&quot; method=&quot;post&quot;&gt;
+&lt;input type=&quot;text&quot; name=&quot;data&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;action&quot; value=&quot;qr&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;ajax&quot; value=&quot;ajax&quot;&gt;
+&lt;input type=&quot;submit&quot; name=&quot;Send&quot;&gt;
+&lt;/form&gt;
+&lt;div id=&quot;qrc&quot;&gt;&lt;/div&gt;
+</code>
+<br />
+			<h3>Example Ajax ( jQuery )</h3>
+<code>
+$(document).on('submit', '#qrform', function( event ) {
+	event.preventDefault();
+	var formd = $(this).serialize();
+
+	$.ajax({
+		type: 'POST',
+		url: 'http://formican.com/qr-api.php',
+		crossDomain: true,
+		data: formd,
+		success: function( image ) {
+			$('#qrc').html( '&lt;img src=&quot;data:image/png;base64,' + image + '&quot;/&gt;' );				
+		},
+		error: function (responseData, textStatus, errorThrown) {
+			alert( 'POST failed.' + responseData + ' | ' + textStatus + ' | ' + errorThrown );
+		}
+	});
+});
+</code>
+			<h3>Note:</h3>
+			<p>You must note that, setting an input field with "ajax" as value will send you the image as base64 encoded string which you need to insert in the document as shown above.
+				If "ajax" field is not set while making an Ajax request you will not get the desired output</p>
+						
+			</div>
+			
+			<div id="apisr">
+				<h1>QRMAN API - Generate, Save and retrieve Statistics.</h1>
+				<p>This feature provides a flexible interface to generate QR Codes. You simply send all the required data, and the QRMAN will take care of encoding them and converting them into QR Codes.
+				</p>
+				<h3>Usage</h3>
+					<p>
+						You need to send parameters to http://yoursite.com/qr-api.php either via GET or POST. This feature also supports cross domain Ajax request. Exmples can be found inside the docs folder.				
+					</p>
+				<h3>Example</h3>
+<code>
+http://www.formican.com/qr-api.php?action=save&amp;qt=bookmarks&amp;title=free 3d models&amp;url=http://animium.com&amp;apk=420e6225cfb09dcd2c4b66b18ff1bed6&amp;format=xml&amp;tr=3
+</code>
+				<h3>Example Output</h3>
+<code>
+&lt;result&gt;
+	&lt;qrimg&gt;http://formican.com/qrimages/admin/qrcode1365495952.png&lt;/qrimg&gt;
+	&lt;width&gt;273&lt;/width&gt;
+	&lt;status&gt;success&lt;/status&gt;
+	&lt;trwidth&gt;217&lt;/trwidth&gt;
+	&lt;trimg&gt;http://formican.com/qrimages/admin/trackcode1365495952.png&lt;/trimg&gt;
+	&lt;trcstatus&gt;3&lt;/trcstatus&gt;
+	&lt;qrtype&gt;bookmarks&lt;/qrtype&gt;
+	&lt;shorturl&gt;http://formican.com/o&lt;/shorturl&gt;
+&lt;/result&gt;
+</code>
+				<br />
+				<h2>Parameters for generating QR Code</h2>
+				<br />
+				<div id="parameter">
+					<h3>Expected Parameters</h3>
+					
+					<table>
+						<tr>
+							<th>Parameter</th><th>Value</th><th>Description</th>
+						</tr>
+						<tr>
+							<td>action</td><td>save</td><td>Specifies that your are requesting the api to save the QR Code <pre>e.g: http://yoursite.com/qr-api.php?action=save </pre></td>
+						</tr>
+						<tr>
+							<td>qt</td>
+							<td>
+								QR Code Types
+								<p>can be one of the following</p>
+								<ul>
+									<li>urls</li>
+									<li>bookmarks</li>
+									<li>texts</li>
+									<li>telephones</li>
+									<li>sms</li>
+									<li>emails</li>
+									<li>emsg</li>
+									<li>mecard</li>
+									<li>vcard</li>
+									<li>geo</li>
+								</ul>
+							</td>
+							<td>Specifies the type of qr code to be generated <pre>e.g: http://yoursite.com/qr-api.php?action=save&qt=bookmarks</pre></td>
+						</tr>
+						<tr>
+							<td>apk</td><td> api key </td><td>Your api key which you will get while registering your account. <pre>e.g: http://yoursite.com/qr-api.php?action=save&apk=secret </pre></td>
+						</tr>
+						<tr>
+							<td>format</td>
+							<td>
+								Expected output format
+								<p>can be one of the following</p>
+								<ul>
+									<li>XML</li>
+									<li>JSON</li>
+									<li>JSONP</li>
+								</ul>
+							</td>
+							<td>Output will be presented in these formats. Default format is xml <pre>e.g: http://yoursite.com/qr-api.php?action=save&format=json </pre></td>
+						</tr>
+						<tr>
+							<td>tr</td>
+							<td>
+								Tracking Status
+								<p>can be one of the following</p>
+								<ul>
+									<li>1 - Tracking Code only</li>
+									<li>2 - Non Tracking Code</li>
+									<li>3 - Both</li>
+								</ul>
+							</td>
+							<td>The type of QR Code to be Generated. Default is 1<pre>e.g: http://yoursite.com/qr-api.php?action=save&tr=3 </pre></td>
+						</tr>
+						
+					</table>
+					<br />
+					<h2> Tracking and Non Tracking </h2>
+					<p><strong>Tracking Code -</strong>
+						Tracking code contains the shorturl generated for every QR Code, which actually provides tracking ability.
+					</p>
+					<p><strong>Non Tracking Code -</strong>
+						This is the actual data, for example vcard data, that contains name, address etc.
+					</p>
+					<br />
+					
+					<h3>QR Code Data Parameters</h3>
+					<p>These are the actual parameters send to the server to be encoded into QR Code,
+					for example to create a bookmark, the following parameters are required.</p>
+					<br />
+					<p><strong>title</strong> - title of the website</p>
+					<p><strong>url</strong> - url of the website</p>
+				
+					<p>the above parameters can be send as shown in the example, and encoding will be taken care of by the api.</p>
+					<br />
+					<p>Following are the parameters to be sent for various types of QR Codes. You can setup a form with all the 
+					required field names and submit it to the api, also remember it supports Cross Domain Ajax requests.
+					</p>
+					<table>
+						<tr>
+							<th>Parameter</th><th>Description</th>
+						</tr>
+						<tr>
+							<td id="param_head" colspan=2>Bookmarks</td>
+						</tr>
+						<tr>
+							<td>url</td><td>Url of the site</td>
+						</tr>
+						<tr>
+							<td>title</td><td>title of the site - will be detected automatically if left empty</td>
+						</tr>
+						<tr>
+							<td id="param_head" colspan=2>Urls</td>
+						</tr>	
+						<tr>
+								<td>url</td><td>Url of the site</td>
+						</tr>
+						<tr>
+							<td id="param_head" colspan=2>Texts</td>
+						</tr>
+						<tr>
+							<td>simptxt</td><td>Simple Text</td>
+						</tr>	
+						<tr>
+							<td id="param_head" colspan=2>Telephones</td>
+						</tr>
+						<tr>
+							<td>phno</td><td>Phone number</td>
+						</tr>
+						<tr>
+							<td id="param_head" colspan=2>Sms</td>
+						</tr>
+						<tr>
+							<td>phno</td><td>Phone number</td>
+						</tr>
+						<tr>
+							<td>smstxt</td><td>Sms Text</td>
+						</tr>
+						<tr>
+							<td id="param_head" colspan=2>Emails</td>
+						</tr>
+						<tr>
+							<td>email</td><td>Email id</td>							
+						</tr>
+						<tr>
+							<td id="param_head" colspan=2>Email message</td>
+						</tr>
+						<tr>
+							<td>email</td><td>Email id</td>							
+						</tr>
+						<tr>
+							<td>subject</td><td>Subject of the Email</td>							
+						</tr>
+						<tr>
+							<td>body</td><td>Body of the email</td>							
+						</tr>
+						<tr>
+							<td id="param_head" colspan=2>Mecard</td>
+						</tr>
+						<tr>
+							<td>fname</td><td>First name</td>
+						</tr>
+						<tr>
+							<td>fname</td><td>First name</td>
+						</tr>
+						<tr>
+							<td>phno</td><td>Phone number</td>
+						</tr>
+						<tr>
+							<td>email</td><td>Email id</td>
+						</tr>
+						<tr>
+							<td>url</td><td>Web address</td>
+						</tr>
+						<tr>
+							<td>note</td><td>Additional Notes</td>
+						</tr>
+						<tr>
+							<td>bday</td><td>Birthday - in this format YYYY-MM-DD</td>
+						</tr>
+						<tr>
+							<td>street</td><td>Address - street</td>
+						</tr>
+						<tr>
+							<td>city</td><td>Address - city</td>
+						</tr>
+						<tr>
+							<td>state</td><td>Address - state</td>
+						</tr>
+						<tr>
+							<td>zip</td><td>Address - zip</td>
+						</tr>
+						<tr>
+							<td>country</td><td>Address - country</td>
+						</tr>
+						<tr>
+							<td id="param_head" colspan=2>vCard</td>
+						</tr>
+						<tr>
+							<td>vcver</td><td>Vcard Version - can be one of the following - 2.1, 3.0 or 4.0 - do not leave the ".0" in version numbers</td>
+						</tr>
+						<tr>
+							<td>fname</td><td>First name</td>
+						</tr>
+						<tr>
+							<td>lname</td><td>Last name</td>
+						</tr>
+						<tr>
+							<td>wphno</td><td>Work phone number</td>
+						</tr>
+						<tr>
+							<td>hphno</td><td>Home phone number</td>
+						</tr>
+						<tr>
+							<td>bday</td><td>Birthday - in this format YYYY-MM-DD</td>
+						</tr>
+						<tr>
+							<td>email</td><td>Email id</td>
+						</tr>
+						<tr>
+							<td>url</td><td>Web address</td>
+						</tr>
+						<tr>
+							<td>photo</td><td>Url of the photo image</td>
+						</tr>
+						<tr>
+							<td>org</td><td>Oranisaion</td>
+						</tr>
+						<tr>
+							<td>title</td><td>Title</td>
+						</tr>
+						<tr>
+							<td>hstreet</td><td>Home address - street</td>
+						</tr>
+						<tr>
+							<td>hcity</td><td>Home addresss - city</td>
+						</tr>
+						<tr>
+							<td>hstate</td><td>Home address - state</td>
+						</tr>
+						<tr>
+							<td>hzip</td><td>Home address - zip</td>
+						</tr>
+						<tr>
+							<td>hcountry</td><td>Home address - country</td>
+						</tr>
+						<tr>
+							<td>wstreet</td><td>Work address - street</td>
+						</tr>
+						<tr>
+							<td>wcity</td><td>Work address - city</td>
+						</tr>
+						<tr>
+							<td>wstate</td><td>Work address - state</td>
+						</tr>
+						<tr>
+							<td>wzip</td><td>Work address - zip</td>
+						</tr>
+						<tr>
+							<td>wcountry</td><td>Work address - country</td>
+						</tr>
+						<tr>
+							<td id="param_head" colspan=2>Geo Location</td>
+						</tr>
+						<tr>
+							<td>lat</td><td>Latitude</td>
+						</tr>
+						<tr>
+							<td>lng</td><td>Longitude</td>
+						</tr>
+						<tr>
+							<td>altitude</td><td>Altitude</td>
+						</tr>
+												
+					</table>
+					
+				</div>
+				<br />
+				<p><h2> Retrieve Statistics </h2></p>
+				<p>You can get the number clicks by country with this feature.</p>
+				<h3>Usage</h3>
+				<p>
+					You need to send parameters to http://yoursite.com/qr-api.php either via GET or POST. This feature also supports cross domain Ajax request. Exmples can be found inside the docs folder.				
+				</p>
+				<h3>Example</h3>
+<code>
+http://formican.com/qr-api.php?action=stat&kw=J&format=xml&apk=f0ebc7890scghjkyrwf651bc1a63d
+</code>
+				<h3>Example Output</h3>
+<code>
+	&lt;result&gt;
+	&lt;keyword&gt;J&lt;/keyword&gt;
+	&lt;type&gt;vcard&lt;/type&gt;
+	&lt;timestamp&gt;2013-04-16 23:09:59&lt;/timestamp&gt;
+	&lt;ip&gt;117.254.148.117&lt;/ip&gt;
+	&lt;clicks&gt;3&lt;/clicks&gt;
+	&lt;shorturl&gt;http://formican.com/J&lt;/shorturl&gt;
+	&lt;countries&gt;
+	&lt;IN&gt;2&lt;/IN&gt;
+	&lt;US&gt;1&lt;/US&gt;
+	&lt;/countries&gt;
+	&lt;/result&gt;
+</code>
+			<div id="stparams">
+			<h3>Expected Parameters</h3>
+				<table>
+					<tr>
+						<th>Parameter</th><th>Value</th><th>Description</th>
+					</tr>
+					<tr>
+						<td>action</td><td>stat</td><td>Specifies that your are requesting the api to fetch the statistics <pre>e.g: http://yoursite.com/qr-api.php?action=stat </pre></td>
+					</tr>
+					<tr>
+						<td>format</td>
+						<td>
+							Expected output format
+							<p>can be one of the following</p>
+							<ul>
+								<li>XML</li>
+								<li>JSON</li>
+								<li>JSONP</li>
+							</ul>
+						</td>
+						<td>Output will be presented in these formats. Default format is xml <pre>e.g: http://yoursite.com/qr-api.php?action=stat&format=json </pre></td>
+					</tr>
+					<tr>
+						<td>apk</td><td> api key </td><td>Your api key which you will get while registering your account. <pre>e.g: http://yoursite.com/qr-api.php?action=stat&apk=secret </pre></td>
+					</tr>
+					<tr>
+						<td>kw</td><td> keyword </td><td>keyword or shorturl for which the statistics is requested <pre>e.g: http://yoursite.com/qr-api.php?action=stat&kw=Z </pre></td>
+					</tr>		
+				</table>
+				</div>
+			</div>
+			
+			<div id="credits">
+				
+				<div class="section">
+					<div class="grid12 firstcol">
+						<h1>Credits</h1>						
+					</div>
+				</div>
+				<div class="section">
+					<div class="grid8 firstcol">
+						<h2>Author</h2>
+						<p>Savoul Pelister<p>
+						<p>pelister@techlister.com</p>
+						<br />	
+						<h2>Software Testing</h2>
+						<p>Sathish Rajakumar<p>
+						<p>http://techlister.com</p>
+						<br />			
+						For support or feature requests write to us at the above email address or leave a comment on http://techlister.com/php/qrman-url-shortener-and-qr-code-generator/865/
+						Thanks to everyone who helped to make this simple piece of software.
+					</div>
+					
+					<div class="grid4 sidebar">
+						
+						<div class="box reverse">
+							<h3>Proposed Development Plan</h3>
+							<p>Plugin Interface</p>
+							<p>Multilingual</p>
+						</div>					
+
+					</div>
+				</div>
+				
+			</div>		
+		
+	
+		<div id="require">
+			<div class="section">
+				<div class="grid7 firstcol">
+					<h2>Software Requirements </h2>
+						<p>PHP 5.2.4+</p>
+						<p>MySQL 5.0+</p>
+						<p>PHP Data Objects ( PDO ) interface is used to access MySQL</p>
+						
+					<br />	
+					<h3>htaccess file</h3>
+					QRMAN needs its own .htaccess located in the root of the installation
+					You cannot install QRMAN along with other apps or scripts like WordPress, in the same directory. They need their own .htaccess file as they handle urls differently.
+					If you want to install QRMAN on the same domain, then install it in a subdirectory, such as yoursite.com/qrman.
+					
+				</div>
+				
+				<div class="grid5 sidebar">
+					<div class="box">
+						<p>Installation will mostly detect the required versions.</p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	
+	</div>
+	<div id="footer">
+		<p>&copy;2012-2013 <a href="http://techlister.com">Techlister.</a> All rights reserved.</p>
+	</div>
+</div>
+</body>
+</html>

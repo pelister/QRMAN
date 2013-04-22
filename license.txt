@@ -1,0 +1,9 @@
+
+QRMAN 1.0  - URL Shortener and QR code Generator
+
+
+This php application is distributed as freeware, You are welcome to do whatever you want. 
+
+For more on license, have a look at http://www.gnu.org/licenses/gpl.txt
+
+By Pelister (development) , Sathish (Software testing and improvements).

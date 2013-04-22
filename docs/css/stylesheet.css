@@ -1,0 +1,14 @@
+/* Author:	 Pelister
+ * Url :		http://techlister.com 
+ */
+
+@font-face {
+    font-family: 'courgetteregular';
+    src: url('courgette-regular-webfont.eot');
+    src: url('courgette-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('courgette-regular-webfont.woff') format('woff'),
+         url('courgette-regular-webfont.ttf') format('truetype'),
+         url('courgette-regular-webfont.svg#courgetteregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

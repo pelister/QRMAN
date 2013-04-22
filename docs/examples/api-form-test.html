@@ -1,0 +1,98 @@
+﻿<html>
+<head>
+	<title>Techlister.com - Cross Domain Ajax Request - API TEST </title>
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+
+	$(document).ready( function() {
+	
+	$(document).on('submit', '#myform', function( event ) {
+		
+		event.preventDefault();
+		var formd = $(this).serialize();
+		
+//ajax short form POST method getting json 
+		$.post( "http://formican.com/qr-api.php", formd, function( data ) {
+			//alert( data );
+			$('#qrc').append( '<img src="' + data.trimg + '"/>' );
+			$('#qrc').append( '<img src="' + data.qrimg + '"/>' );
+			
+		},"json"); 
+	
+// uncomment the below block if you want use low level ajax interface	
+// the original ajax low level interface.
+/*
+
+		$.ajax({
+			type: 'POST',  //set method
+			url: 'http://formican.com/qr-api.php', //the formican api 
+			crossDomain: true, //set crossDomain to true
+			data: formd, //serialized form data
+			dataType: 'json', //set expected data type
+			success: function( data ) {
+				
+				$('#qrc').append( '<img src="' + data.trimg + '"/>' ); //get the tracking image
+				$('#qrc').append( '<img src="' + data.qrimg + '"/>' ); //get the qr code .
+				
+			},
+			error: function (responseData, textStatus, errorThrown) {
+				alert( 'POST failed.' + responseData + ' | ' + textStatus + ' | ' + errorThrown );
+			}
+		});  
+*/
+		
+	});
+	
+	$(document).on('submit', '#qrform', function( event ) {
+		event.preventDefault();
+		var formd = $(this).serialize();
+		
+		$.ajax({
+			type: 'POST',
+			url: 'http://formican.com/qr-api.php',
+			crossDomain: true,
+			data: formd,
+			success: function( image ) {
+				$('#qrc').html( '<img src="data:image/png;base64,' + image + '"/>' );				
+			},
+			error: function (responseData, textStatus, errorThrown) {
+				alert( 'POST failed.' + responseData + ' | ' + textStatus + ' | ' + errorThrown );
+			}
+		});
+	});
+	
+});
+</script>
+
+<body>
+
+<form action="http://formican.com/qr-api.php" id="myform" method="post">
+<input type="text" name="title">
+<input type="text" name="url">
+<input type="hidden" name="apk" value="f0ebc74d684ab4c4203cdc651bc1a63d">
+<input type="hidden" name="qt" value="bookmarks">
+<input type="hidden" name="action" value="save">
+<input type="hidden" name="format" value="json">
+<input type="hidden" name="tr" value="3">
+<input type="submit" name="Send">
+</form>
+
+<form action="http://formican.com/qr-api.php" id="qrform" method="post">
+<input type="text" name="data">
+<input type="hidden" name="action" value="qr">
+<input type="hidden" name="ajax" value="ajax">
+
+<input type="submit" name="Send">
+</form>
+<div id="qrc"></div>
+
+<!--
+sample query string
+
+ http://formican.com/qr-api.php?action=save&qt=bookmarks&title=free 3d models&url=http://animium.com&apk=f0ebc74d684ab4c4203cdc651bc1a63d&format=xml&tr=3  
+ 
+ -->
+</body>
+</html>
+
+

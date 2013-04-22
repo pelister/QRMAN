@@ -1,0 +1,13 @@
+/* Author:	 Pelister
+ * Url :		http://techlister.com 
+ */
+@font-face {
+	font-family: 'IstokWebRegular';
+    src: url('IstokWeb-Regular-webfont.eot');
+    src: url('IstokWeb-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('IstokWeb-Regular-webfont.woff') format('woff'),
+         url('IstokWeb-Regular-webfont.ttf') format('truetype'),
+         url('IstokWeb-Regular-webfont.svg#IstokWebRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

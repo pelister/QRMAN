@@ -1,0 +1,349 @@
+@import url(grid.css);
+HTML, BODY, DIV, SPAN, APPLET, OBJECT, IFRAME, H1, H2, H3, H4, H5, H6, P, BLOCKQUOTE, PRE, A, ABBR, ACRONYM, ADDRESS, BIG, CITE, CODE, DEL, DFN, EM, FONT, IMG, INS, KBD, Q, S, SAMP, SMALL, STRIKE, STRONG, SUB, SUP, TT, VAR, B, U, I, CENTER, DL, DT, DD, OL, UL, LI, FIELDSET, FORM, LABEL, LEGEND, TABLE, CAPTION, TBODY, TFOOT, THEAD, TR, TH, TD
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+BODY
+{
+	line-height: 1.5;
+}
+OL, UL
+{
+	list-style: disc inside;
+}
+BLOCKQUOTE, Q
+{
+	quotes: none;
+}
+BLOCKQUOTE:before, BLOCKQUOTE:after, Q:before, Q:after
+{
+	content: '';
+	content: none;
+}
+:focus
+{
+	outline: 0;
+}
+INS
+{
+	text-decoration: none;
+}
+DEL
+{
+	text-decoration: line-through;
+}
+TABLE
+{
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 860px;
+}
+BODY
+{
+	color: #222;
+	background-color: #BCBCBC;
+}
+A
+{
+	text-decoration: none;
+	color: #1883BA;
+}
+#logo
+{
+}
+H1
+{
+	font-size: 32px;
+	font-weight: normal;
+	font-style: normal;
+	margin-bottom: 0px;
+	/*[empty]padding-left:;*/
+}
+H2
+{
+	font-size: 22px;
+}
+H3
+{
+	font-size: 18px;
+}
+H1, H2, H3
+{
+	color: #0F3775;
+}
+#container
+{
+	width: 900px;
+	margin: 0px auto;
+}
+#header
+{
+	padding: 20px 20px 10px;
+	font-size: 36px;
+	background-color: #DDD;
+	color: #FFF;
+}
+#header H1
+{
+	padding-left: 135px;
+}
+#header SPAN
+{
+	color: #777;
+}
+#main_content
+{
+	background-color: #EEE;
+	padding: 60px 20px 20px;
+}
+#main_content UL
+{
+	padding-left: 30px;
+}
+#param_head
+{
+	font: bold 16px sans-serif;
+	padding-left: 30px;
+}
+#parameter UL, #stparams UL
+{
+	text-align: left;
+}
+#footer P
+{
+	margin: 0;
+	padding-top: 10px;
+	padding-bottom: 50px;
+	color: #333;
+	font: 12px Arial, sans-serif;
+}
+.tabs
+{
+	width: 100%;
+	height: 31px;
+	background-color: #9AC;
+}
+.tabs LI
+{
+	float: left;
+	margin: 0;
+	overflow: hidden;
+	background-color: #247;
+	list-style: none;
+}
+.tabs LI A
+{
+	display: block;
+	color: #FFF;
+	text-decoration: none;
+	font: bold 11px/11px Arial;
+	text-transform: uppercase;
+	padding: 10px 15px;
+	border-right: 1px solid #FFF;
+}
+.tabs LI A:hover
+{
+	background-color: #00B3FF;
+}
+.tabs LI.active A
+{
+	color: #000;
+	background-color: #F7C8A0;
+}
+TABLE, TH, TD
+{
+	border: 1px solid #BBB !important;
+}
+TD, TH
+{
+	padding: 5px;
+	vertical-align: middle;
+	line-height: 1.2em;
+	text-align: center;
+}
+TD:first-child
+{
+	background-color: #DDD;
+	text-align: center;
+	padding-right: 5px;
+	padding-left: 0;
+	padding: 5px;
+	font: 12px/12px "Courier New", Courier, mono;
+}
+TD:last-child
+{
+	text-align: left;
+	padding-left: 5px;
+}
+CODE
+{
+	white-space: pre;
+	background-color: #DEF;
+	display: block;
+	padding: 5px 10px;
+	margin-top: 18px;
+	overflow: auto;
+	border: 1px solid #818487;
+}
+PRE
+{
+	padding: 5px;
+	background-color: #DEF;
+	border: 1px solid #FFF;
+}
+.bottom, .last
+{
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+.sidebar
+{
+	width: 300px;
+}
+.box
+{
+	padding: 18px;
+	margin-bottom: 18px;
+	background: #BBB;
+}
+.reverse, .reversed
+{
+	background: #BBB !important;
+	color: #FFF !important;
+	border: none !important;
+}
+#bodycomparison
+{
+	position: relative;
+	overflow: hidden;
+	font-size: 72px;
+	height: 90px;
+	white-space: nowrap;
+}
+#bodycomparison DIV
+{
+	font-size: 72px;
+	line-height: 90px;
+	display: inline;
+	margin: 0 15px 0 0;
+	padding: 0;
+}
+#bodycomparison DIV SPAN
+{
+	font: 10px Arial;
+	position: absolute;
+	left: 0;
+}
+#xheight
+{
+	float: none;
+	position: absolute;
+	color: #D9F3FF;
+	font-size: 72px;
+	line-height: 90px;
+}
+.fontbody
+{
+	position: relative;
+}
+.arialbody
+{
+	font-family: Arial;
+	position: relative;
+}
+.verdanabody
+{
+	font-family: Verdana;
+	position: relative;
+}
+.georgiabody
+{
+	font-family: Georgia;
+	position: relative;
+}
+/*@group Layout page
+ */
+#layout H1
+{
+	font-size: 36px;
+	line-height: 42px;
+	font-weight: normal;
+	font-style: normal;
+}
+#layout H2
+{
+	font-size: 24px;
+	line-height: 23px;
+	font-weight: normal;
+	font-style: normal;
+}
+#layout H3
+{
+	font-size: 22px;
+	line-height: 1.4em;
+	margin-top: 1em;
+	font-weight: normal;
+	font-style: normal;
+}
+#layout P.byline
+{
+	font-size: 12px;
+	margin-top: 18px;
+	line-height: 12px;
+	margin-bottom: 0;
+}
+#layout P
+{
+	font-size: 14px;
+	line-height: 21px;
+	margin-bottom: 0.5em;
+}
+#layout P.large
+{
+	font-size: 18px;
+	line-height: 26px;
+}
+#layout .sidebar P
+{
+	font-size: 12px;
+	line-height: 1.4em;
+}
+#layout P.caption
+{
+	font-size: 10px;
+	margin-top: -16px;
+	margin-bottom: 18px;
+}
+/*@end
+@group Installing*/
+#installing
+{
+	font: 13px Arial, sans-serif;
+}
+#installing P, #glyphs P
+{
+	line-height: 1.2em;
+	margin-bottom: 18px;
+	font: 13px Arial, sans-serif;
+}
+#installing H3
+{
+	font-size: 15px;
+	margin-top: 18px;
+}
+/*@end*/
+#rendering H1
+{
+	font-family: Arial, sans-serif;
+}
+.render_table TD
+{
+	font: 11px "Courier New", Courier, mono;
+	vertical-align: middle;
+}
