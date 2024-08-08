@@ -36,5 +36,5 @@ Download version 1.0
 ----------------------
 * [QRMAN 1.0][download].
 
-[demo]: http://formican.com
+[demo]: https://qrman.techlister.com
 [download]: http://techlister.com/php/qrman-url-shortener-and-qr-code-generator/865/
